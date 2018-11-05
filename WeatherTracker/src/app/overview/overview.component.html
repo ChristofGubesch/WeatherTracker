@@ -1,3 +1,15 @@
-<p>
-  overview works!
-</p>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo justify-content-between">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" href=""></a>
+  </mdb-navbar-brand>
+  <links>
+    <h2 class="header">
+      WeatherTracker Overview
+    </h2>
+    <div class="btn-group" mdbDropdown>
+        <button type="button" mdbBtn color="white" (click)="navigateLogin()">
+            Logout
+        </button>
+    </div>
+  </links>
+</mdb-navbar>

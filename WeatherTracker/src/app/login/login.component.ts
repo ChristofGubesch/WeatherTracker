@@ -1,4 +1,4 @@
-import { AuthentificationService } from './../authentification.service';
+import { AuthentificationService } from './../services/authentification.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
