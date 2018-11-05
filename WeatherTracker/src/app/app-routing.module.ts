@@ -1,3 +1,4 @@
+import { RouteGuard } from './routeguard';
 import { OverviewComponent } from './overview/overview.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule, Component } from '@angular/core';
@@ -9,12 +10,13 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: '**',
-    redirectTo: 'login'
+    path: 'home',
+    component: OverviewComponent,
+    canActivate: [RouteGuard]
   },
   {
-    path: 'overview',
-    component: OverviewComponent
+    path: '**',
+    redirectTo: 'login'
   }
 ];
 

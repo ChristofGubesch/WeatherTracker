@@ -1,17 +1,38 @@
 <!-- Default form login -->
-<div class="container">
-  <form class="text-center border border-light p-5">
+<div class="login-background">
+  <div class="container">
+    <form class="text-center p-5">
+  
+      <p class="h4 mb-4">WeatherTracker Login</p>
+    
+      <div class="d-flex justify-content-around">
+      </div>
+  
+      <div class="md-form form-sm">
+        <input mdbInputDirective type="email" id="form1" class="form-control form-control-sm" [(ngModel)]="email" name="email">
+        <label for="form1" class="">Email</label>
+      </div>
 
-    <p class="h4 mb-4">WeatherTracker Login</p>
+      <div class="md-form form-sm">
+        <input mdbInputDirective type="password" id="form1" class="form-control form-control-sm" [(ngModel)]="password" name="password">
+        <label for="form1" class="">Passowrd</label>
+      </div>
+    
+      <!-- Sign in button -->
+      <button mdbBtn color="black" (click)="login()" block="true" class="my-4" type="submit"> 
+        Sign in
+      </button>
   
-    <div class="d-flex justify-content-around">
-    </div>
+      <h6>not registered ?</h6>
+      <h6>then enter a vaild email and password and click below</h6>
+      <button mdbBtn color="black" (click)="register()" block="true" class="my-4" type="submit"> 
+        Sign up
+      </button> 
+      <label for="form1" class="error">
+        {{error}}
+      </label>
+    
+    </form>
+  </div>
   
-    <!-- Sign in button -->
-    <button mdbBtn color="black" (click)="loginGoogle()" block="true" class="my-4" type="submit"> 
-      <img src="/assets/search.svg" height="25px">
-      Sign in
-    </button>
-  
-  </form>
 </div>

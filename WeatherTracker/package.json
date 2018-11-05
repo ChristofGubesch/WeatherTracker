@@ -25,7 +25,6 @@
     "angular": "^1.7.5",
     "angular-bootstrap-md": "^6.2.6",
     "angular5-csv": "^0.2.10",
-    "angularfire2": "^5.1.0",
     "chart.js": "^2.5.0",
     "core-js": "^2.5.4",
     "firebase": "^5.5.7",
