@@ -13,12 +13,14 @@ import { environment } from '../environments/environment';
 import { OverviewComponent } from './overview/overview.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SettingComponent } from './setting/setting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    OverviewComponent
+    OverviewComponent,
+    SettingComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
