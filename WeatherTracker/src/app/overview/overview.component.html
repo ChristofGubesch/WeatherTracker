@@ -13,3 +13,23 @@
     </div>
   </links>
 </mdb-navbar>
+
+<div class="container">
+
+  <a routerLink="/setting" class="btn btn-primary">Setting</a>
+
+  <div class="info" *ngIf="weather">
+    <h1><strong>City: </strong>{{weather.city.name}}</h1>
+    <h3><strong>longitude: </strong>{{weather.city.coord.lon}}</h3>
+    <h3><strong>longitude: </strong>{{weather.city.coord.lat}}</h3>
+    <h3><strong>Temp: </strong>{{temp}} °C</h3>
+    <h3><strong>MaxTemp: </strong>{{maxTemp}} °C</h3>
+    <h3><strong>MinTemp: </strong>{{minTemp}} °C</h3>
+    <h3><strong>Weather description: </strong> {{weather.list[0].weather[0].description}}</h3>
+    <h3><strong>humidity: </strong>{{weather.list[0].main.humidity}}</h3>
+    <h3><strong>People have looked up for this city: </strong>{{counter}}</h3>
+
+  </div>
+
+
+</div>

@@ -1,3 +1,4 @@
+import { SettingComponent } from './setting/setting.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -13,7 +14,8 @@ import { environment } from '../environments/environment';
 import { OverviewComponent } from './overview/overview.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SettingComponent } from './setting/setting.component';
+import { WeatherService } from './services/weather.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,12 @@ import { SettingComponent } from './setting/setting.component';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { SettingComponent } from './setting/setting.component';
 import { RouteGuard } from './routeguard';
 import { OverviewComponent } from './overview/overview.component';
 import { LoginComponent } from './login/login.component';
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: 'home',
     component: OverviewComponent,
     canActivate: [RouteGuard]
+  },
+  {
+    path: 'setting',
+    component: SettingComponent
   },
   {
     path: '**',

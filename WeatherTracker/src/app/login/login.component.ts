@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     .catch((error) => {
       this.error = error;
     });
-    // this.router.navigate(['home']);
+    this.router.navigate(['home']);
   }
 
   ngOnInit() {
