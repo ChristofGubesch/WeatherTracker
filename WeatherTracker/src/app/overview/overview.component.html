@@ -1,23 +1,19 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo justify-content-between">
-  <mdb-navbar-brand>
-    <a class="navbar-brand" href=""></a>
-  </mdb-navbar-brand>
   <links>
     <h2 class="header">
       WeatherTracker Overview
     </h2>
     <div class="btn-group" mdbDropdown>
-        <button type="button" mdbBtn color="white" (click)="navigateLogin()">
+        <a routerLink="/setting" mdbBtn color="light-green" class="btn btn-primary settings">Settings</a>
+        <button type="button" class="btn btn-primary settings" mdbBtn color="white" (click)="navigateLogin()">
             Logout
         </button>
     </div>
   </links>
 </mdb-navbar>
 
-<div class="container">
-
-  <a routerLink="/setting" class="btn btn-primary">Setting</a>
-
+<div class="my-container">
+  <br/>
   <div class="info" *ngIf="weather">
     <h1><strong>City: </strong>{{weather.city.name}}</h1>
     <h3><strong>longitude: </strong>{{weather.city.coord.lon}}</h3>
@@ -27,9 +23,21 @@
     <h3><strong>MinTemp: </strong>{{minTemp}} °C</h3>
     <h3><strong>Weather description: </strong> {{weather.list[0].weather[0].description}}</h3>
     <h3><strong>humidity: </strong>{{weather.list[0].main.humidity}}</h3>
-    <h3><strong>People have looked up for this city: </strong>{{counter}}</h3>
-
   </div>
 
+  <br/>
+  <hr/>
+  <br/>
+  <h3>If you want to know how often a city was viewed enter a valid city-code and click below!</h3>
+  <br/>
+
+  <input type="text"  class="form-control input"  name="citycode" [(ngModel)]="citycode">
+  <br/>
+  <button type="button" class="btn btn-primary" mdbBtn color="light-green" (click)="getCounter()">
+      click me!
+  </button>
+  <br/>
+  <br/>
+  <h3><strong>Views: </strong> {{views}}</h3>
 
 </div>

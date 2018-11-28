@@ -40,7 +40,4 @@ export class DatabaseService {
     this.city.update(JSON.parse(JSON.stringify(update)));
   }
 
-  toObject(model: any) {
-    return JSON.parse(JSON.stringify(model));
-  }
 }

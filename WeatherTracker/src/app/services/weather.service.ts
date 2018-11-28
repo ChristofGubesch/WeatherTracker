@@ -15,4 +15,17 @@ export class WeatherService {
     return this.http.get(this.url + city + ',' + code + '&APPID=' + this.apiKey);
   }
 
+  getCount(citycode: string) {
+    console.log(citycode);
+    return this.http.get(`https://us-central1-weathertracker-7ab1d.cloudfunctions.net/getCounter?code=${citycode}`).pipe(
+      map(json => {
+        return this.getCounterOfCity(json);
+      })
+    );
+  }
+
+  getCounterOfCity(json: any): string {
+    return json.count;
+  }
+
 }

@@ -20,6 +20,8 @@ export class OverviewComponent implements OnInit {
   temp: any;
   maxTemp: any;
   minTemp: any;
+  citycode: any;
+  views: any;
 
 
   constructor(private authentificationService: AuthentificationService, private router: Router, private weatherService: WeatherService) { }
@@ -52,7 +54,17 @@ export class OverviewComponent implements OnInit {
     );
   }
 
+  getCounter() {
+    this.weatherService.getCount(this.citycode).subscribe( data => {
+      console.log(this.citycode);
+      console.log('trololo');
+      console.log(data);
+      this.views = data;
+    });
+  }
+
   navigateLogin() {
+    localStorage.clear();
     this.router.navigate(['login']);
   }
 }
