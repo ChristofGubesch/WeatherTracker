@@ -26,6 +26,7 @@ export class AuthentificationService {
     });
   }
 
+  // the function is a getter for a property
   get authenticated(): boolean {
     return this.authState !== null;
   }

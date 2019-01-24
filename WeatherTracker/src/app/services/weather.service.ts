@@ -11,10 +11,12 @@ export class WeatherService {
   constructor(public http: HttpClient) {
   }
 
+  // Aufruf der OpenWeatherMap Api
   getWeather(city, code) {
     return this.http.get(this.url + city + ',' + code + '&APPID=' + this.apiKey);
   }
 
+  // Aufruf der Firebase function
   getCount(citycode: string) {
     console.log(citycode);
     return this.http.get(`https://us-central1-weathertracker-7ab1d.cloudfunctions.net/getCounter?code=${citycode}`).pipe(

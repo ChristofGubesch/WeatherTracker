@@ -1,43 +1,45 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo justify-content-between">
-  <links>
-    <h2 class="header">
-      WeatherTracker Overview
-    </h2>
-    <div class="btn-group" mdbDropdown>
-        <a routerLink="/setting" mdbBtn color="light-green" class="btn btn-primary settings">Settings</a>
-        <button type="button" class="btn btn-primary settings" mdbBtn color="white" (click)="navigateLogin()">
-            Logout
-        </button>
+<div class="overview-background">
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark stylish-color-dark justify-content-between">
+    <links>
+      <h2 class="header">
+        WeatherTracker Overview
+      </h2>
+      <div class="btn-group" mdbDropdown>
+          <a routerLink="/setting" mdbBtn color="light-green" class="btn btn-primary settings">Settings</a>
+          <button type="button" class="btn btn-primary settings" mdbBtn color="white" (click)="navigateLogin()">
+              Logout
+          </button>
+      </div>
+    </links>
+  </mdb-navbar>
+
+  <div class="my-container">
+    <br/>
+    <div class="info" *ngIf="weather">
+      <h1 class="text-color"><strong>City: </strong>{{weather.city.name}}</h1>
+      <h3 class="text-color"><strong>longitude: </strong>{{weather.city.coord.lon}}</h3>
+      <h3 class="text-color"><strong>longitude: </strong>{{weather.city.coord.lat}}</h3>
+      <h3 class="text-color"><strong>Temp: </strong>{{temp}} °C</h3>
+      <h3 class="text-color"><strong>MaxTemp: </strong>{{maxTemp}} °C</h3>
+      <h3 class="text-color"><strong>MinTemp: </strong>{{minTemp}} °C</h3>
+      <h3 class="text-color"><strong>Weather description: </strong> {{weather.list[0].weather[0].description}}</h3>
+      <h3 class="text-color"><strong>humidity: </strong>{{weather.list[0].main.humidity}}</h3>
     </div>
-  </links>
-</mdb-navbar>
 
-<div class="my-container">
-  <br/>
-  <div class="info" *ngIf="weather">
-    <h1><strong>City: </strong>{{weather.city.name}}</h1>
-    <h3><strong>longitude: </strong>{{weather.city.coord.lon}}</h3>
-    <h3><strong>longitude: </strong>{{weather.city.coord.lat}}</h3>
-    <h3><strong>Temp: </strong>{{temp}} °C</h3>
-    <h3><strong>MaxTemp: </strong>{{maxTemp}} °C</h3>
-    <h3><strong>MinTemp: </strong>{{minTemp}} °C</h3>
-    <h3><strong>Weather description: </strong> {{weather.list[0].weather[0].description}}</h3>
-    <h3><strong>humidity: </strong>{{weather.list[0].main.humidity}}</h3>
+    <br/>
+    <hr/>
+    <br/>
+    <h3 class="text-color">If you want to know how often a city was viewed enter a valid city-code and click below!</h3>
+    <br/>
+
+    <input type="text"  class="form-control input"  name="citycode" [(ngModel)]="citycode">
+    <br/>
+    <button type="button" class="btn btn-primary" mdbBtn color="light-green" (click)="getCounter()">
+        click me!
+    </button>
+    <br/>
+    <br/>
+    <h3 class="text-color"><strong>Views: </strong> {{views}}</h3>
+
   </div>
-
-  <br/>
-  <hr/>
-  <br/>
-  <h3>If you want to know how often a city was viewed enter a valid city-code and click below!</h3>
-  <br/>
-
-  <input type="text"  class="form-control input"  name="citycode" [(ngModel)]="citycode">
-  <br/>
-  <button type="button" class="btn btn-primary" mdbBtn color="light-green" (click)="getCounter()">
-      click me!
-  </button>
-  <br/>
-  <br/>
-  <h3><strong>Views: </strong> {{views}}</h3>
-
 </div>

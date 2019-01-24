@@ -27,10 +27,6 @@ export class OverviewComponent implements OnInit {
   constructor(private authentificationService: AuthentificationService, private router: Router, private weatherService: WeatherService) { }
 
   ngOnInit() {
-    /*this.authentificationService.user.subscribe(user => {
-      this.image = user.photoURL;
-      console.log(user);
-    });*/
     this.value = localStorage.getItem('location');
 
     if (this.value != null) {
@@ -57,9 +53,11 @@ export class OverviewComponent implements OnInit {
   getCounter() {
     this.weatherService.getCount(this.citycode).subscribe( data => {
       console.log(this.citycode);
-      console.log('trololo');
       console.log(data);
       this.views = data;
+      /*if (this.views) {
+        this.views = 0;
+      }*/
     });
   }
 
